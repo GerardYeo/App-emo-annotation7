@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SEND annotation test</title>
+    <link href="styles/style.css" rel="stylesheet"> 
+    
+  </head>
+  <body>
+
+    <div class="progress" id="progressBar">
+      <div class="bar-wrapper">
+        <div class="bar"></div>
+      </div>
+      <p>Progress bar: <span id="trial-num">{{}}</span><span>/</span><span id="total-num">{{}}</span></p>
+   </div>
+    
+    <div class="slide" id="instructions">
+      <img src='images/nus.jpeg' alt="NUS Logo" width="500",height="400" class="center">
+      <p id='logo-text' style="text-align: center;"><b>Computational Affective and Social Cognition Lab</b></p>
+      <p class="block-text">Welcome to our study and thank you for participating! In this study, we are interested in how people infer emotions of others based on other people's experiences. 
+        This task will take approximately 30 minutes.
+        <br><br>
+        Please ensure that the sound on your computer is turned on.
+        <br><br>  
+        Do not do this task on a mobile device or tablet.
+      </p>
+      <button type="button" onclick="this.blur(); experiment.participant_information(); ">Next</button>
+      <p id='legal'> Legal information: No information pertaining to your personal identity will be collected. Moreover, questions on your demographics
+         (e.g. race, age etc.) collected at the end are optional. At any time during the course of the study, you may withdraw
+         and all provided data will be discarded and not be used by our research team. Your participation in this research is entirely voluntary. if you like to understand more on the
+         the study before participating, you can contact Gerard Yeo at <a href="mailto://e0545159@u.nus.edu">e0545159@u.nus.edu.sg</a>. 
+      </p>  
+    </div>
+
+    <div class="slide" id="participant_information">
+        <p id="logo-text" style='text-align: center'><b><u>Participant Information</u></b></p>
+        <p class="block-text1">The following states some information and frequently asked questions (FAQs) about the study. Please take the time to read if you have any concerns about the study.</p>
+        <p class="block-text1"><b>Project Title:</b> Modelling Appraisals and Emotions in Narratives</p>
+        <p class="block-text1"><b>Purpose of project:</b> This study investigates how people interpret the situation that other people are experiencing and also, reason about the emotions felt by other people in the situation.   </p>
+        <p class="block-text1"><b>Who can participate in this project? What is the expected duration of participation?</b></p>
+        <p class="block-text1">Anyone who are at least 21 years old are eligible to participate in this study that lasts about 30 minutes. </p>
+        <p class="block-text1"><b>What is the approximate number of research participants involved?</b> </p>
+        <p class="block-text1">Approximately 2000 participants will be involved in this study.</p>
+        <p class="block-text1"><b>What will be done if I take part in this research study?</b></p>
+        <p class="block-text1">You will be presented with short videos and tasked to answer questions relating to the video. At the end of the task, there will be a demographic (age, gender, ethnicity, etc.) questionnaire to be filled up (optional). </p>
+        <p class="block-text1"><b>How will my privacy and the confidentiality of my research records be protected?</b></p>
+        <p class="block-text1">All project records and data will be kept strictly confidential. No identifiable personal information (names, identity card or address, etc.) will be collected in this study. All data collected will be kept in accordance to the University’s Research Data Management Policy. Research data used in any publication will be kept for a minimum of 10 years before being discarded.  </p>
+        <p class="block-text1"><b>What are the possible discomforts and/or risks for participants?</b></p>
+        <p class="block-text1">No risks, discomforts or injury are expected in your participation in this experiment.</p>  
+        <p class="block-text1"><b>What is the compensation for any injury?</b></p>
+        <p class="block-text1">There will be no compensation for any injury. However, you can contact the Co-Investigator, Gerard Yeo, if you require assistance in the event of any research-related injury.</p>  
+        <p class="block-text1"><b>Will there be reimbursement for participation?</b></p>
+        <p class="block-text1">You will receive US$4 for participation.</p>
+        <p class="block-text1"><b>What are the possible benefits of this project?</b> </p>
+        <p class="block-text1">There is no direct benefit to you by participating in this research study. The knowledge gained may benefit the public in the future in terms of understanding how people reason about emotions. </p>
+        <p class="block-text1"><b>Can I withdraw in the midst of participating in the study?</b> </p>
+        <p class="block-text1">Yes, you can. Your decision to participate in this project is voluntary and completely up to you. Should you choose to participate, you can still withdraw from the project at any time, without giving any reasons, by informing the principal investigator. All data and/or samples that you have provided will then be discarded.
+        </p>
+        <p class="block-text1"><b>Whom should I call if I have any questions or problems?</b></p>
+        <p class="block-text1">Please contact the Co-Investigator, Gerard Yeo 
+          at <a href="mailto://e0545159@u.nus.edu">e0545159@u.nus.edu</a> 
+            for all matters related to this project and in the event of project-related problems. For an independent opinion specifically regarding the rights and welfare of research participants, you may contact a staff member of the National University of Singapore Institutional Review Board at telephone (+65) 6516 1234 (Mondays to Thursdays from 8.30am to 6pm, and Fridays from 8.30am to 5.30pm, except public holidays) or email at irb@nus.edu.sg.</p>
+        <p class="block-text1">If you are interested and consent to taking part in this study, please key in your Prolific ID in the blank below and click the "Start study" button to indicate your consent 
+          and begin the study.</p>
+        <p class="block-text1">
+          <form name="myForm">
+          <input type="text" id="identifier" class="field" name="identifier" pattern="[a-zA-Z0-9]+" required/>
+          <button type="button" onclick="this.blur(); if (validateComprehensionCheck()) {experiment.description();} ">Start study</button>
+          </form>
+        </p>  
+      </div>
+
+      <div class="slide" id="description">
+        <p id='logo-text'><b>Instructions</b></p>
+        <p class="block-text"> 
+            In this task, you will watch 12 short video clips (each approximately 1 min long) of people describing emotional events that happened in their lives.
+            After each video, you will be tasked to answer the following questions. Please read the questions in the following table carefully. These questions 
+            will be used throughout the study. <br><br>
+            
+            After reading each question, please click on any point on the associated 9-point scale (the scale on the right of each question) to acknowledge that you have understood the question. 
+        </p>
+        <form id="instruction_form">
+        <table>
+          <tr>
+            <td>1. To what extent did the narrator think that THEY were responsible for causing the situation?</td>
+            <td>
+                <p>
+                  Narrator thought they were:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="instruct1" value="1">
+                    <label>Not at all responsible</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct1" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct1" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct1" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct1" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct1" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct1" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct1" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct1" value="9">
+                    <label>Completely responsible</label>
+                  </li>
+                </ul> 
+            </td>
+          </tr>
+          <tr>
+            <td>2. To what extent did the narrator think that OTHER PEOPLE were responsible for causing the situation?</td>
+            <td>
+                <p>
+                  Other people were:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="instruct2" value="1">
+                    <label>Not at all responsible</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct2" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct2" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct2" value="disagree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct2" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct2" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct2" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct2" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct2" value="strong_agree">
+                    <label>Completely responsible</label>
+                  </li>
+                </ul> 
+            </td>
+          </tr>
+          <tr>
+            <td>3. To what extent did the narrator think that CIRCUMSTANCES BEYOND ANYONE’S CONTROL were responsible for causing the situation?<br><br>
+              (For example, if the narrator thought that the situation was caused by luck, or by weather, or by some other things outside anyone's control.)
+            </td>
+            <td>
+                <p>
+                  Circumstances were:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="instruct3" value="Not at all">
+                    <label>Not at all responsible</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct3" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct3" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct3" value="disagree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct3" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct3" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct3" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct3" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct3" value="strong_agree">
+                    <label>Completely responsible</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>4. To what extent did the narrator think that they were able to COPE with the consequences of the event?<br></br>
+              (For example, if the narrator thought that they had the resources or the knowledge to make the situation better, or at least manageable.)
+            </td>
+            <td>
+                <p>
+                  Narrator thought that they were:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="instruct4" value="Not at all">
+                    <label>Completely unable to cope</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct4" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct4" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct4" value="disagree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct4" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct4" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct4" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct4" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct4" value="strong_agree">
+                    <label>Completely able to cope</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>5. To what extent did the narrator think that the situation was RELEVANT to their concerns and goals?<br></br>
+              (For example, if the narrator thought that the situation was personally important to what they desire.)
+            </td>
+            <td>
+                <p>
+                  Situation was:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="instruct5" value="Not at all">
+                    <label>Not at all relevant</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct5" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct5" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct5" value="disagree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct5" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct5" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct5" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct5" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct5" value="strong_agree">
+                    <label>Completely relevant</label>
+                  </li>
+                </ul> 
+            </td>
+          </tr>
+          <tr>
+            <td>6. To what extent did the narrator think that they needed to ATTEND to the situation further?<br></br>
+              (For example, if the narrator thought that the situation was either very complicated, dangerous, or interesting, that required them to pay more attention to deal with it.)
+            </td>
+            <td>
+                <p>
+                  Further attention was:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="instruct6" value="Not at all">
+                    <label>Not at all needed</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct6" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct6" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct6" value="disagree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct6" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct6" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct6" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct6" value="strong_agree">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="instruct6" value="strong_agree">
+                    <label>Completely needed</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+        </table>
+        <p class="block-text">
+          After rating these questions, you will be tasked to rate how you think the narrator felt when describing the events in the video. 
+          Please click the Start button to begin the study. 
+        </p>
+        <button type="submit" onclick="this.blur(); if (validateComprehensionCheck_app_int()) {experiment.video();} ">Start study</button>
+      </form>
+      </div>
+
+
+    <div class="slide" id="video">
+        <p class="block-text">
+          Please watch the video and listen to its content carefully. The video will only be played once. Please click the video screen to begin watching the video. 
+        </p>
+        <video width="640" height="480" id="videoElement" controls>
+        </video>
+        <button id="next_button_video" type="submit" onclick="this.blur(); experiment.questions(); ">Next</button>
+    </div>  
+
+
+
+    <div class="slide" id="table_questions">
+      <p class="block-text">
+        Please answer each question by clicking on the respective circles on the scale of 1 - 9.
+      </p>
+      <form id="my-form" method="POST" action="https://script.google.com/macros/s/AKfycbzbS2oqcF857NcXDgTAteA0xGbb-YqaUfwPUhnTvK90T_-uusT8OQaI7WRi944sI3Wc/exec">
+      <table>
+        <tr>
+          <td>1. To what extent did the narrator think that THEY were responsible for causing the situation?</td>
+          <td>
+              <p>
+                Narrator thought they were:
+              </p>
+              <ul class='likert'>
+                <li>
+                  <input type="radio" name="ap1" value="1">
+                  <label>Not at all responsible</label>
+                </li>
+                <li>
+                  <input type="radio" name="ap1" value="2">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap1" value="3">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap1" value="4">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap1" value="5">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap1" value="6">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap1" value="7">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap1" value="8">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap1" value="9">
+                  <label>Completely responsible</label>
+                </li>
+              </ul> 
+          </td>
+        </tr>
+        <tr>
+          <td>2. To what extent did the narrator think that OTHER PEOPLE were responsible for causing the situation?</td>
+          <td>
+              <p>
+                Other people were:
+              </p>
+              <ul class='likert'>
+                <li>
+                  <input type="radio" name="ap2" value="1">
+                  <label>Not at all responsible</label>
+                </li>
+                <li>
+                  <input type="radio" name="ap2" value="2">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap2" value="3">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap2" value="4">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap2" value="5">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap2" value="6">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap2" value="7">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap2" value="8">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap2" value="9">
+                  <label>Completely responsible</label>
+                </li>
+              </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>3. To what extent did the narrator think that CIRCUMSTANCES BEYOND ANYONE’S CONTROL were responsible for causing the situation?<br><br>
+            (For example, if the narrator thought that the situation was caused by luck, or by weather, or by some other things outside anyone's control.)
+          </td>
+          <td>
+              <p>
+                Circumstances were:
+              </p>
+              <ul class='likert'>
+                <li>
+                  <input type="radio" name="ap3" value="1">
+                  <label>Not at all responsible</label>
+                </li>
+                <li>
+                  <input type="radio" name="ap3" value="2">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap3" value="2">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap3" value="4">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap3" value="5">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap3" value="6">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap3" value="7">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap3" value="8">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap3" value="9">
+                  <label>Completely responsible</label>
+                </li>
+              </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>4. To what extent did the narrator think that they were able to COPE with the consequences of the event?<br></br>
+            (For example, if the narrator thought that they had the resources or the knowledge to make the situation better, or at least manageable.)
+          </td>
+          <td>
+              <p>
+                Narrator thought they were:
+              </p>
+              <ul class='likert'>
+                <li>
+                  <input type="radio" name="ap4" value="1">
+                  <label>Completely unable to cope</label>
+                </li>
+                <li>
+                  <input type="radio" name="ap4" value="2">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap4" value="3">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap4" value="4">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap4" value="5">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap4" value="6">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap4" value="7">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap4" value="8">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap4" value="9">
+                  <label>Completely able to cope</label>
+                </li>
+              </ul> 
+          </td>
+        </tr>
+        <tr>
+          <td>5. To what extent did the narrator think that the situation was RELEVANT to their concerns and goals?<br></br>
+            (For example, if the narrator thought that the situation was personally important to what they desire.)
+          </td>
+          <td>
+              <p>
+                Situation was:
+              </p>
+              <ul class='likert'>
+                <li>
+                  <input type="radio" name="ap5" value="1">
+                  <label>Not at all relevant</label>
+                </li>
+                <li>
+                  <input type="radio" name="ap5" value="2">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap5" value="3">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap5" value="4">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap5" value="5">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap5" value="6">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap5" value="7">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap5" value="8">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap5" value="9">
+                  <label>Completely relevant</label>
+                </li>
+              </ul> 
+          </td>
+        </tr>
+        <tr>
+          <td>6. To what extent did the narrator think that they needed to ATTEND to the situation further?<br></br>
+            (For example, if the narrator thought that the situation was either very complicated, dangerous, or interesting, that required them to pay more attention to deal with it.)
+          </td>
+          <td>
+              <p>
+                Further attention was:
+              </p>
+              <ul class='likert'>
+                <li>
+                  <input type="radio" name="ap6" value="1">
+                  <label>Not at all needed</label>
+                </li>
+                <li>
+                  <input type="radio" name="ap6" value="2">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap6" value="3">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap6" value="4">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap6" value="5">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap6" value="6">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap6" value="7">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap6" value="8">
+                  <label></label>
+                </li>
+                <li>
+                  <input type="radio" name="ap6" value="9">
+                  <label>Completely needed</label>
+                </li>
+              </ul> 
+          </td>
+        </tr>
+      </table>
+      <button type="submit" onclick="this.blur(); if (validateComprehensionCheck_app()) {experiment.emotion();} ">Next</button>
+      </form>
+    </div>
+
+    <div class="slide" id="emotion_question_set_1">
+        <p class="block-text">
+          Please answer each question by clicking on the respective circles on the scale of 1 - 9.
+        </p>
+        <form id="emotion_set1" method="POST" action="https://script.google.com/macros/s/AKfycbzbS2oqcF857NcXDgTAteA0xGbb-YqaUfwPUhnTvK90T_-uusT8OQaI7WRi944sI3Wc/exec">
+        <table>
+          <tr>
+            <td>1. To what extent was the narrator feeling ANGRY?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em1" value="1">
+                    <label>Not at all angry</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em1" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em1" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em1" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em1" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em1" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em1" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em1" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em1" value="9">
+                    <label>Very angry</label>
+                  </li>
+                </ul> 
+            </td>
+          </tr>
+          <tr>
+            <td>2. To what extent was the narrator feeling HAPPY?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em2" value="1">
+                    <label>Not at all happy</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em2" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em2" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em2" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em2" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em2" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em2" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em2" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em2" value="9">
+                    <label>Very happy</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>3. To what extent was the narrator feeling ANXIOUS?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em3" value="1">
+                    <label>Not at all anxious</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em3" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em3" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em3" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em3" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em3" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em3" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em3" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em3" value="9">
+                    <label>Very anxious</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>4. To what extent was the narrator feeling GRATEFUL?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em4" value="1">
+                    <label>Not at all grateful</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em4" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em4" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em4" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em4" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em4" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em4" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em4" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em4" value="9">
+                    <label>Very grateful</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>5. To what extent was the narrator feeling DISAPPOINTED?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em5" value="1">
+                    <label>Not at all disappointed</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em5" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em5" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em5" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em5" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em5" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em5" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em5" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em5" value="9">
+                    <label>Very disappointed</label>
+                  </li>
+                </ul> 
+            </td>
+          </tr>
+          <tr>
+            <td>6. To what extent was the narrator feeling EXCITED?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em6" value="1">
+                    <label>Not at all excited</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em6" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em6" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em6" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em6" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em6" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em6" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em6" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em6" value="9">
+                    <label>Very excited</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+        </table>
+        <button type="submit" onclick="this.blur(); if (validateComprehensionCheck_em1()) {experiment.video();} ">Next</button>
+        </form>
+      </div>
+
+      <div class="slide" id="emotion_question_set_2">
+        <p class="block-text">
+          Please answer each question by clicking on the respective circles on the scale of 1 - 9.
+        </p>
+        <form id="emotion_set2" method="POST" action="https://script.google.com/macros/s/AKfycbzbS2oqcF857NcXDgTAteA0xGbb-YqaUfwPUhnTvK90T_-uusT8OQaI7WRi944sI3Wc/exec">
+        <table>
+          <tr>
+            <td>1. To what extent was the narrator feeling LOVED?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em7" value="1">
+                    <label>Not at all loved</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em7" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em7" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em7" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em7" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em7" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em7" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em7" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em7" value="9">
+                    <label>Very loved</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>2. To what extent was the narrator feeling GUILTY?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em8" value="1">
+                    <label>Not at all guilty</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em8" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em8" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em8" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em8" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em8" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em8" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em8" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em8" value="9">
+                    <label>Very guilty</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>3. To what extent was the narrator feeling PRIDEFUL?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em9" value="1">
+                    <label>Not at all prideful</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em9" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em9" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em9" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em9" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em9" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em9" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em9" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em9" value="9">
+                    <label>Very prideful</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>4. To what extent was the narrator feeling INTERESTED?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em10" value="1">
+                    <label>Not at all interested</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em10" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em10" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em10" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em10" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em10" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em10" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em10" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em10" value="9">
+                    <label>Very interested</label>
+                  </li>
+                </ul> 
+            </td>
+          </tr>
+          <tr>
+            <td>5. To what extent was the narrator feeling SHAMEFUL?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em11" value="1">
+                    <label>Not at all shameful</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em11" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em11" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em11" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em11" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em11" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em11" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em11" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em11" value="9">
+                    <label>Very shameful</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>6. To what extent was the narrator feeling AWED?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em12" value="1">
+                    <label>Not at all awed</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em12" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em12" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em12" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em12" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em12" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em12" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em12" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em12" value="9">
+                    <label>Very awed</label>
+                  </li>
+                </ul> 
+            </td>
+          </tr>
+        </table>
+        <button type="submit" onclick="this.blur(); if (validateComprehensionCheck_em2()) {experiment.video();} ">Next</button>
+        </form>
+      </div>
+
+      <div class="slide" id="emotion_question_set_3">
+        <p class="block-text">
+          Please answer each question by clicking on the respective circles on the scale of 1 - 9.
+        </p>
+        <form id="emotion_set3" method="POST" action="https://script.google.com/macros/s/AKfycbzbS2oqcF857NcXDgTAteA0xGbb-YqaUfwPUhnTvK90T_-uusT8OQaI7WRi944sI3Wc/exec">
+        <table>
+          <tr>
+            <td>1. To what extent was the narrator feeling REGRETFUL?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em13" value="1">
+                    <label>Not at all regretful</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em13" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em13" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em13" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em13" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em13" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em13" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em13" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em13" value="9">
+                    <label>Very regretful</label>
+                  </li>
+                </ul> 
+            </td>
+          </tr>
+          <tr>
+            <td>2. To what extent was the narrator feeling RELIEVED?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em14" value="1">
+                    <label>Not at all relieved</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em14" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em14" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em14" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em14" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em14" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em14" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em14" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em14" value="9">
+                    <label>Very relieved</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>3. To what extent was the narrator feeling SAD?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em15" value="1">
+                    <label>Not at all sad</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em15" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em15" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em15" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em15" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em15" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em15" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em15" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em15" value="9">
+                    <label>Very sad</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>4. To what extent was the narrator feeling SURPRISED?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em16" value="1">
+                    <label>Not at all surprised</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em16" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em16" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em16" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em16" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em16" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em16" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em16" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em16" value="9">
+                    <label>Very surprised</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>5. To what extent was the narrator feeling DISGUSTED?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em17" value="1">
+                    <label>Not at all disgusted</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em17" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em17" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em17" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em17" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em17" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em17" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em17" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em17" value="9">
+                    <label>Very disgusted</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>6. To what extent was the narrator feeling SCARED?</td>
+            <td>
+                <p>
+                  Narrator felt:
+                </p>
+                <ul class='likert'>
+                  <li>
+                    <input type="radio" name="em18" value="1">
+                    <label>Not at all scared</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em18" value="2">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em18" value="3">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em18" value="4">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em18" value="5">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em18" value="6">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em18" value="7">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em18" value="8">
+                    <label></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="em18" value="9">
+                    <label>Very scared</label>
+                  </li>
+                </ul>
+            </td>
+          </tr>
+        </table>
+        <button type="submit" onclick="this.blur(); if(validateComprehensionCheck_em3()) {experiment.video();} ">Next</button>
+        </form>
+      </div> 
+
+      <div class="slide" id="demographics">
+        <p class="block-text">
+          You have come to the final slide. We would like to find out a little more about yourself. The following questions are entirely optional.
+        </p>
+        <form id="demographics_questions" method="POST" action="https://script.google.com/macros/s/AKfycbzbS2oqcF857NcXDgTAteA0xGbb-YqaUfwPUhnTvK90T_-uusT8OQaI7WRi944sI3Wc/exec">
+            <br>
+            <p class="block-text"> 1. What gender do you identify with? </p>&nbsp;&nbsp;<br>
+            <input type="radio" name="gender" value="M" />&nbsp;&nbsp; Male &nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="F" />&nbsp;&nbsp; Female &nbsp;&nbsp; <br>
+            If others, please state,
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="gender_others" />&nbsp;&nbsp;
+            <br>
+
+            <p class="block-text">2. What is your age?</p> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="ageRange" /><br>
+
+            <br>
+
+            <p class="block-text" id="infoQrace">3. What racial category do you identify with? Select all that apply </p><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="raceButton-AmIndian" value="AmIndian" />
+            American Indian / Alaska Native <br>
+            <input type="checkbox" name="raceButton-Asian" value="Asian" />
+            Asian <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="raceButton-NativeHawaiian" value="NativeHawaiian" />
+            Native Hawaiian / Other Pacific Islander <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="raceButton-Black" value="Black" />
+            Black or African American <br>
+            <input type="checkbox" name="raceButton-White" value="White" />
+            White<br>
+
+            <br>
+
+            <p class="block-text" id="infoQrace">4. What ethnic category do you identify with? </p><br>
+            <input type="radio" name="ethnicityButton" value="hispanic" /> 
+            Hispanic or Latino <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="ethnicityButton" value="notHispanic" /> 
+            Not Hispanic or Latino<br>
+
+
+            <p class="block-text" id="infoQ">5. What is your native language?</p> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="nativeLanguage" /><br />
+
+            <br>
+            <p class="block-text"> Thank you for doing this task! Please hit the button below to end the study. </p>
+
+            <button type="submit" onclick="this.blur(); experiment.end(); ">End</button>
+
+        </form>
+      </div> 
+
+      <div class="slide" id="finished">
+        <p class="block-text">
+          You're finished with this task. Thanks for participating! Please click <a href="https://app.prolific.co/submissions/complete?cc=5A6F5407">HERE</a> to be redirected back to Prolific to record your completion of this study.
+        </p>
+      </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="scripts/main1.js"></script> 
+  </body>
+</html> 
