@@ -5,7 +5,7 @@ var participant_id;
 
 // video and emotion sets
 var video_num = 0;
-var emotion_set_num = 3;
+var emotion_set_num = 1;
 var emotionID = "emotion_question_set_" + emotion_set_num; // this is to be used to show which emotion question set 
 var emotionID1 = "emotion_set" + emotion_set_num;
 
